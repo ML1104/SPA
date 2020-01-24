@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <PageHeader></PageHeader>
     <PageContent></PageContent>
     <PageFooter></PageFooter>
@@ -9,7 +7,6 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import PageHeader from './components/PageHeader.vue'
 import PageContent from './components/PageContent.vue'
 import PageFooter from './components/PageFooter.vue'

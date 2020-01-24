@@ -112,6 +112,10 @@ export default {
         height: 100px;
         padding-right: 5px;
 
+        :hover {
+          cursor: pointer;
+        }
+
         .image {
           width: 100%;
           height: 100%;
