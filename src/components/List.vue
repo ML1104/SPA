@@ -5,21 +5,25 @@
       <div class="underline"></div>
     </div>
 
-    <div id="images">
-      <div class="item">
-        <div class="imageSlot"></div>
-        <div class="date">
-          <div></div>
-          <div></div>
-          <div></div>
+    <div class="images">
+      <div class="item" v-for="picture in pictures" :key="picture.id">
+        <div class="imageSlot">
+          <img :src="picture.download_url" alt="picture" class="image" />
         </div>
-        <div class="info">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="button">
-          <a href>Find pics ></a>
+        <div class="details">
+          <div class="date">
+            <div>{{ picture.month }}</div>
+            <div>{{ picture.day }}</div>
+            <div>{{ picture.year }}</div>
+          </div>
+          <div class="info">
+            <div>{{ picture.description }}</div>
+            <div>{{ picture.author }}</div>
+            <div>Width: {{ picture.width }}, Height: {{ picture.height }}</div>
+          </div>
+          <div class="button">
+            <a href>Find pics ></a>
+          </div>
         </div>
       </div>
     </div>
@@ -32,17 +36,19 @@ export default {
 
   data() {
     return {
-      pictures: []
+      pictures: [],
+      dates: [
+        { month: "FEB", day: "14", year: "", duration: "Mon - 19:30" },
+        { month: "FEB", day: "28", year: "2019", duration: "Thu - 20:00" },
+        { month: "MAR", day: "01", year: "", duration: "Until Mar 03" }
+      ]
     };
   },
 
   computed: {
-    firstHalf() {
-      return this.pictures.slice(4, 7);
-    },
-
-    secondHalf() {
-      return this.pictures.slice(0, 3);
+    joinedArray() {
+      var result = this.pictures.concat(this.dates);
+      return result;
     }
   },
 
@@ -65,8 +71,10 @@ export default {
 #list {
   background-color: white;
   width: 70%;
-  height: 45%;
-  border: 1px solid black;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 
   .title {
     padding-bottom: 25px;
@@ -83,12 +91,53 @@ export default {
     }
   }
 
-  #images {
+  .images {
     width: 75%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
+
+    .item {
+      display: flex;
+      align-items: center;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      border-bottom: 1px solid black;
+      width: 100%;
+
+      .imageSlot {
+        width: 180px;
+        height: 100px;
+        padding-right: 5px;
+
+        .image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .details {
+        width: 100%;
+
+        .button {
+          float: right;
+          padding: 10px;
+          background-color: #ca0188;
+          color: white;
+
+          :link {
+            text-decoration: none;
+            color: white;
+          }
+
+          :visited {
+            color: white;
+          }
+        }
+      }
+    }
   }
 }
 </style>

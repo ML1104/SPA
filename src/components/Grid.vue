@@ -59,8 +59,7 @@ export default {
 #grid {
   background-color: white;
   width: 70%;
-  height: 45%;
-  border: 1px solid black;
+  height: 50%;
   display: flex;
   flex-direction: column;
 
@@ -81,38 +80,41 @@ export default {
 
   .images {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
+    width: 100%;
     height: 100%;
-    align-self: center;
 
     .item {
         box-shadow: 0px 0px 5px #000000;
-        width: 180px;
-        max-height: 150px;
+        width: 200px;
+        max-height: 120px;
         display: flex;
         flex-direction: column;
-        margin: 5px;
+        margin-right: 20px;
+        margin-top: 10px;
+        padding-bottom: 50px;
         position: relative;
         border-radius: 2px;
+        
+        :hover {
+          cursor: pointer;
+        }
 
       .imageSlot {
         position: relative;
         display: flex;
         justify-content: center;
-        width: 180px;
+        width: 200px;
 
         img {
           width: 200px;
-          height: 100px;
+          height: 120px;
         }
 
         .imageText {
           position: absolute;
           bottom: 0;
           left: 0;
-          width: 170px;
+          width: 95%;
           background-color: rgba($color: #000000, $alpha: 0.3);
           padding: 5px;
           color: white;
