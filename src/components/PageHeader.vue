@@ -29,7 +29,7 @@ export default {
     }
 
     #submit {
-      background-color: #c90187;
+      background-color: #CA0188;
       color: white;
       border: 0;
       padding: 7px;
